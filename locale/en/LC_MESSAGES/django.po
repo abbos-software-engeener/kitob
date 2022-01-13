@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-13 14:58+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: api/models.py:11 api/models.py:42 api/models.py:49 category/models.py:7
+#: category/models.py:14
+msgid "title"
+msgstr ""
+
+#: api/models.py:12
+msgid "isbn"
+msgstr ""
+
+#: api/models.py:13
+msgid "author"
+msgstr ""
+
+#: api/models.py:14
+msgid "publishing"
+msgstr ""
+
+#: api/models.py:15 api/models.py:43
+msgid "description"
+msgstr ""
+
+#: api/models.py:16
+msgid "count_sell"
+msgstr ""
+
+#: api/models.py:17
+msgid "price"
+msgstr ""
+
+#: api/models.py:18
+msgid "seen"
+msgstr ""
+
+#: api/models.py:19 category/models.py:8 category/models.py:15
+msgid "image"
+msgstr ""
+
+#: api/models.py:20 api/models.py:37 category/models.py:9 category/models.py:16
+msgid "updated_at"
+msgstr ""
+
+#: api/models.py:21 api/models.py:38 api/models.py:45 category/models.py:10
+#: category/models.py:17
+msgid "created_at"
+msgstr ""
+
+#: api/models.py:27 api/models.py:34
+msgid "book"
+msgstr ""
+
+#: api/models.py:28
+msgid "books"
+msgstr ""
+
+#: api/models.py:32
+msgid "user"
+msgstr ""
+
+#: api/models.py:35
+msgid "category"
+msgstr ""
+
+#: api/models.py:36
+msgid "subcategory"
+msgstr ""
+
+#: api/models.py:50
+msgid "address"
+msgstr ""
+
+#: api/models.py:51 category/models.py:24
+msgid "phone"
+msgstr ""
+
+#: api/models.py:52 category/models.py:23
+msgid "email"
+msgstr ""
+
+#: api/models.py:53
+msgid "achievements"
+msgstr ""
+
+#: api/models.py:59 api/models.py:60
+msgid "about-us"
+msgstr ""
+
+#: category/models.py:21
+msgid "first_name"
+msgstr ""
+
+#: category/models.py:22
+msgid "last_name"
+msgstr ""
+
+#: config/settings.py:114
+msgid "English"
+msgstr ""
+
+#: config/settings.py:115
+msgid "Russian"
+msgstr ""
+
+#: config/settings.py:116
+msgid "Uzbek"
+msgstr ""
+
+#: user/models.py:53
+msgid "phone number"
+msgstr ""
+
+#: user/models.py:61
+msgid "Male"
+msgstr ""
+
+#: user/models.py:62
+msgid "Female"
+msgstr ""
+
+#: user/serializer.py:79 user/serializer.py:83
+msgid "Parol kamida 7 ta belgidan iborat bo'lishi lozim."
+msgstr ""
+
+#: user/serializer.py:80 user/serializer.py:84
+msgid "Parol ko'pi bilan 50 ta belgidan iborat bo'lishi mumkin."
+msgstr ""
+
+#: user/serializer.py:90
+msgid "Parol noto'g'ri kiritilgan."
+msgstr ""
+
+#: user/serializer.py:93
+msgid "Parollar bir xil bo'lishi shart."
+msgstr ""
+
+#: user/serializer.py:96
+msgid "Parol hozirgi parol bilan bir xil."
+msgstr ""
+
+#: user/validators.py:43
+msgid "Kiritilgan qiymat telefon raqam emas"
+msgstr ""
