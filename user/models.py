@@ -33,7 +33,6 @@ class UserManager(BaseUserManager):
         """Create and save a SuperUser with the given phone and password."""
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
-        extra_fields.setdefault('user_access_level', 1)
 
         if extra_fields.get('is_staff') is not True:
             raise ValueError('Superuser must have is_staff=True.')

@@ -17,6 +17,7 @@ class Book(models.Model):
     price = models.BigIntegerField(default=0, verbose_name=_('price'))
     seen = models.IntegerField(default=0, verbose_name=_('seen'))
     image = models.ImageField(upload_to='book-image/', verbose_name=_('image'))
+    rating = models.IntegerField(default=0, verbose_name=_('rating'))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
 
@@ -38,7 +39,7 @@ class Booking(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
 
 
-class Achievements(models.Model):
+class Achievement(models.Model):
     title = models.CharField(max_length=100,verbose_name=_('title'))
     description = models.TextField(verbose_name=_('description'))
     image = models.ImageField(upload_to='AboutUs/', verbose_name='image')
@@ -50,7 +51,7 @@ class AboutUs(models.Model):
     address = models.TextField(verbose_name=_("address"))
     phone = models.CharField(max_length=14,  verbose_name=_("phone"), validators=[PhoneValidator()])
     email = models.EmailField(unique=True, verbose_name=_("email"))
-    achievements = models.ForeignKey(Achievements, on_delete=models.PROTECT, verbose_name=_('achievements'))
+    achievements = models.ForeignKey(Achievement, on_delete=models.PROTECT, verbose_name=_('achievements'))
 
     def __str__(self):
         return self.title
@@ -58,3 +59,10 @@ class AboutUs(models.Model):
     class Meta:
         verbose_name = _('about-us')
         verbose_name_plural = _('about-us')
+
+
+class Card(models.Model):
+    user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name=_('user'))
+    booking = models.ForeignKey(Booking, on_delete=models.PROTECT, verbose_name=_('booking'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))
