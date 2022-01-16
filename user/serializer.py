@@ -6,21 +6,23 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 
 
-class RegistrationSerilaizer(serializers.ModelSerializer):
+class UserRegisterSerializer(serializers.ModelSerializer):
+    def create(self, validated_data):
+        print(validated_data)
+        user = User(
+            phone=validated_data['phone'],
+        )
+
+        user.set_password(validated_data['password'])
+        user.save()
+
+        return user
+
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'password')
-        extra_kwargs = {
-            'password': {'write_only': True}
-        }
-
-    def create(self,validated_data):
-        password = validated_data.pop('password')
-        instance = self.Meta.model(**validated_data)
-        if password is not None:
-            instance.set_password(password)
-            instance.save()
-        return instance
+        fields = ('id', 'password', 'phone')
+        write_only_fields = ('password',)
+        read_only_fields = ('id',)
 
 
 class CustomAuthTokenSerializer(AuthTokenSerializer):

@@ -15,7 +15,7 @@ class Book(models.Model):
     description = RichTextField(verbose_name= _('description'))
     count_sell = models.IntegerField(verbose_name=_('count_sell'))
     price = models.BigIntegerField(default=0, verbose_name=_('price'))
-    seen = models.IntegerField(default=0, verbose_name=_('seen'))
+    seen = models.BooleanField(default=False, verbose_name=_('seen'))
     image = models.ImageField(upload_to='book-image/', verbose_name=_('image'))
     rating = models.IntegerField(default=0, verbose_name=_('rating'))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))

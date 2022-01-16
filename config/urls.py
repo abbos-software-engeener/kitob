@@ -25,14 +25,14 @@ urlpatterns=[]
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
-    # path('api/', include('api.urls', namespace='api')),
-    # path('blog/', include('category.urls')),
-    # path('swagger', schema_view.with_ui(
-    #     'swagger', cache_timeout=0), name='schema-swagger-ui'
-    #      ),
-    # path('redoc/', schema_view.with_ui(
-    #     'redoc', cache_timeout=0), name='schema-redoc-ui'
-    #      ),
+    path('api/', include('api.urls', namespace='api')),
+    path('category/', include('category.urls')),
+    path('swagger', schema_view.with_ui(
+        'swagger', cache_timeout=0), name='schema-swagger-ui'
+         ),
+    path('redoc/', schema_view.with_ui(
+        'redoc', cache_timeout=0), name='schema-redoc-ui'
+         ),
 )
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

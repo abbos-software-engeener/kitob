@@ -19,10 +19,9 @@ class BookView(APIView):
         self.GETSERIALIZER = BookGetSerializer
         self.SERIALIZER = BookSerializer
         self.Filter = BookFilter
-        # self.FILTER_FIELDS = [
-        #     'phone_number',
-        #     'email'
-        # ]
+        self.FILTER_FIELDS = [
+            'title','author','min_price','max_price'
+        ]
         super().__init__(**kwargs)
 
 
@@ -55,12 +54,8 @@ class BookingView(APIView):
     def __init__(self, **kwargs) -> None:
         self.MODEL = Booking
         self.SERIALIZER = BookingSerializer
-        self.GETSERIALIZER = BookingGetSerializer
-        self.Filter = BookingFilter
-        self.FILTER_FIELDS = [
-            'question',
-            'answer'
-        ]
+        self.GETSERIALIZER = BookingGetSerializer 
+        self.FILTER = BookingFilter
         super().__init__(**kwargs)
 
 
@@ -69,7 +64,7 @@ class BookingView(APIView):
         filter = self.FILTER(request.GET, queryset=queryset)
         queryset = filter.qs
         serializer = self.GETSERIALIZER(queryset, many=True)
-        return ResponseSuccess(serializer.data, filter_fields=self.FILTER_FIELDS)
+        return ResponseSuccess(serializer.data)
 
 
     def get(self, request, pk=None):
@@ -152,10 +147,6 @@ class AchievementView(APIView):
         self.MODEL = Achievement
         self.SERIALIZER = AchievementSerializer
         self.Filter = AchievementFilter
-        # self.FILTER_FIELDS = [
-        #     'phone_number',
-        #     'email'
-        # ]
         super().__init__(**kwargs)
 
 
@@ -164,7 +155,7 @@ class AchievementView(APIView):
         filter = self.FILTER(request.GET, queryset=queryset)
         queryset = filter.qs
         serializer = self.GETSERIALIZER(queryset, many=True)
-        return ResponseSuccess(serializer.data, filter_fields=self.FILTER_FIELDS)
+        return ResponseSuccess(serializer.data)
 
 
     def get(self, request, pk=None):
@@ -182,16 +173,13 @@ class AchievementView(APIView):
         return Response(serializer.data)
 
 
-class AboutUs(APIView):
+class AboutUsView(APIView):
     def __init__(self, **kwargs) -> None:
         self.MODEL = AboutUs
         self.GETSERIALIZER = AboutUsGetSerializer
         self.SERIALIZER = AboutUsSerializer
-        self.Filter = AboutFilter
-        # self.FILTER_FIELDS = [
-        #     'phone_number',
-        #     'email'
-        # ]
+        self.Filter = AboutUsFilter
+
         super().__init__(**kwargs)
 
 
@@ -200,7 +188,7 @@ class AboutUs(APIView):
         filter = self.FILTER(request.GET, queryset=queryset)
         queryset = filter.qs
         serializer = self.GETSERIALIZER(queryset, many=True)
-        return ResponseSuccess(serializer.data, filter_fields=self.FILTER_FIELDS)
+        return ResponseSuccess(serializer.data)
 
 
     def get(self, request, pk=None):
@@ -227,20 +215,13 @@ class CardView(APIView):
         self.MODEL = Card
         self.SERIALIZER = CardSerializer
         self.GETSERIALIZER = CardGetSerializer
-        self.Filter = CardFilter
-        # self.FILTER_FIELDS = [
-        #     'question',
-        #     'answer'
-        # ]
         super().__init__(**kwargs)
 
 
     def list(self, request):
         queryset = self.MODEL.objects.all()
-        filter = self.FILTER(request.GET, queryset=queryset)
-        queryset = filter.qs
         serializer = self.GETSERIALIZER(queryset, many=True)
-        return ResponseSuccess(serializer.data, filter_fields=self.FILTER_FIELDS)
+        return ResponseSuccess(serializer.data)
 
 
     def get(self, request, pk=None):
