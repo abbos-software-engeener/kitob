@@ -1,7 +1,7 @@
 
 Procfile:
 
-	web: gunicorn config.wsgi --log-file-
+	web: gunicorn config.wsgi --log-file -
 
 Bunda --log-file -
 	https://stackoverflow.com/questions/26129020/what-does-log-file-mean-in-heroku-procfile
